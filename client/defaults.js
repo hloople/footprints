@@ -1,0 +1,1 @@
+Session.setDefault('adding_clue', false);

@@ -1,0 +1,18 @@
+<!-- 
+	 display all the clues 
+-->
+
+<template name="allclues">
+<input type="hidden" 
+	   name="updated" 
+	   value="{{updated}}"
+	   id="updated">
+	   {{#if adding_clue}}
+	   		{{> addclue}}
+	   {{/if}}
+	   <div id="cluebox" class="container-fluid">
+	   		{{#each clues}}
+	   			{{> clue}}
+	   		{{/each}}
+	   </div>
+</template>

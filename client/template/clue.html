@@ -1,0 +1,28 @@
+<!-- 
+	 all the pinterest like boxes for clues 
+ 	 height: height of the pin's frame 
+ 	 src: url for pin 
+ 	 title: title of the pin that is in muted grey colour 
+ 	 description: description of the clue 
+ -->
+<template name="clue">
+	<div class="item well span4">
+
+		<div class="wrapper">
+    		<div class="h_iframe">
+        		<img class="ratio" src="{{src}}"/>
+    		</div>
+		</div>
+
+		<h4 class="muted">{{title}}</h4>
+		<p>{{description}}</p> 
+
+		{{#if currentUser}}
+			<a href="#" class="like">
+				<img width="22px" src="heart.png" class="img-circle" alt="#"/>
+			</a>
+			<span class="label label-info">{{numlikes}}</span>
+			<span class="badge badge-success">{{likesthis}}</span>
+		{{/if}}
+	</div>
+</template>

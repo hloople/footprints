@@ -1,0 +1,21 @@
+<template name="locprofile">
+	<div class="navbar navbar-static-top">
+		<div class="navbar-inner"> 
+			<a class="brand" href="/">
+				<img src="/cafe-shoebox-icon.png"/>
+			</a>
+			<ul class="nav pull-right"> 
+				{{> loginButtons align="right"}}
+			</ul>
+		</div>
+	</div>
+
+	<div class="locpreviewside">
+		{{> allmppreview}}
+	</div>
+
+	<div class="locmap">
+		{{> bigmap}}
+	</div>
+	
+</template>
