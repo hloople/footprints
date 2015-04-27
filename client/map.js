@@ -81,7 +81,7 @@ if (Meteor.isClient) {
             id: document._id
           });
 
-          markers[document._id] = marker;
+          //markers[document._id] = marker;
         }
       });
     });
