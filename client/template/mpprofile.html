@@ -10,7 +10,7 @@
 	<div class="profileside">
 		<h3> {{firstname}} {{lastname}} </h3>
 		<div class="profilepic"> <img src="{{profilepicture}}"/> </div>
-		
+
 		<div class="datemissingbox">
 			<span class="datemissingbuffer"> Missing for </span>
 			<span class="datemissing">{{datemissingcount}}</span>
@@ -23,29 +23,30 @@
 			
 		</div>
 
-		<details>
-			<summary>Identification: </summary>
-			<p>
-				Nickname: {{nickname}} <br>
-				Missing since: {{datemissing}}<br>
-				Gender: {{gender}}<br>
-				Age Today: {{agetoday}}<br>
-				Eye Color: {{eyecolor}}<br>
-				Height: {{height}}<br>
-				Hair Color: {{haircolor}}<br>
-		<br>
-			</p>
-		</details>
+		<div class="detailsbox">
+			<details>
+				<summary>Identification</summary>
+				<p class="expandabletext">
+					Nickname: {{nickname}} <br>
+					Missing since: {{datemissing}}<br>
+					Gender: {{gender}}<br>
+					Age Today: {{agetoday}}<br>
+					Eye Color: {{eyecolor}}<br>
+					Height: {{height}}<br>
+					Hair Color: {{haircolor}}<br>
+				</p>
+			</details>
+		</div>
 
-		<details>
-			<summary>Contact</summary>
-			<p>
-				Detective Name: {{detectivename}}<br>
-				Detective Phone: {{detectivephone}}<br>
-			</p>
-		</details>
-
-		
+		<div class="detailsbox">
+			<details>
+				<summary>Contact</summary>
+				<p class="expandabletext">
+					Detective Name: {{detectivename}}<br>
+					Detective Phone: {{detectivephone}}<br>
+				</p>
+			</details>
+		</div>
 		
 	</div>
 

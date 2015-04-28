@@ -105,6 +105,7 @@
 }
 
 
+
 a{
   color: #54362A;
 }
@@ -112,6 +113,89 @@ a{
 summary{
   outline:none;
 }
+
+summary::-webkit-details-marker {
+  display: none
+}
+
+
+
+
+
+
+
+details {
+    border-radius: 3px;
+    background: #EEE;
+}
+
+details summary {
+    font-size: 17px;
+    vertical-align: top;
+    background: #333;
+    color: #DBD3C5;
+    border-radius: 3px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+details[open] summary {
+    background: #DBD3C5;
+    color: #333;
+}
+
+.expandabletext {
+  color: #333;
+  padding: 5px;
+  font-size: 13px;
+}
+
+/* Hide the default marker. */    
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Add the custom marker in the default state. */    
+details summary:before {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    content: "";
+    /*background-image: url(/plus.png);*/
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+/* Move the sprite image when the details box is open. */
+details[open] summary:before {
+    background-position: -18px 0;
+}
+
+.detailsbox{
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+/*
+summary:after {
+  
+  background: url("/plus.png");
+  float: left; 
+  height: 30px;
+  width: 28px;
+  content: " ";
+}
+
+details[open] summary:after {
+  
+}
+
+.details{
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+*/
 
 
 
@@ -202,5 +286,7 @@ input[type="search"]::-webkit-search-decoration {
 #search input[type="search"]::-webkit-input-placeholder { color: #42454e; }
 #search input[type="search"]:-moz-placeholder { color: #42454e; }
 #search input[type="search"]:-ms-input-placeholder { color: #42454e; }
+
+
 
 
