@@ -26,7 +26,6 @@ Template.addclue.events({
 		var title = tmpl.find('.title').value;
 		var description = tmpl.find('.description').value;
 		var url = tmpl.find('.src').value;
-		var height = getRandomInt(200,300);
 		Clues.insert({title:title, description:description, src:url, mpprofileid: this._id});
 		Session.set('adding_clue', false);
 	},

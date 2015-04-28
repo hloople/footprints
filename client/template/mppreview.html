@@ -1,13 +1,14 @@
 <template name="mppreview">
 	<!-- make this into a button -->
 	<a href={{mpprofile}}>
-		<div class="item well span4">
-			<div class="h_frame mppreviewbox">
-				<img class="ratio" src="{{src}}"/>
-			    	<p>{{name}}</p>
-					<p>Missing for {{missingdays}} days</p>
-					<!-- <p>{{found}}</p> -->
-			</div>	    
+		<div class="item well span4 mppreviewbox">
+			<div class="wrapper">
+    			<div class="h_iframe">
+        			<img class="ratio" src="{{src}}"/>
+    			</div>
+			</div>
+			<h4 class="muted">{{name}}</h4>
+			<p>Missing for {{missingdays}} days</p> 
 		</div>
 	</a>
 </template>

@@ -1,6 +1,16 @@
+// Run this function when main template is rendered
+Template.allmppreview.rendered = function(){
+  setTimeout(function(){
+    masonize(function(){
+      $('.search-query').focus();
+    })
+  }, 500); // run for half a second
+}
+
+var markers = [];
 
 if (Meteor.isClient) {
-  //Meteor.subscribe("mpprofiles");
+  Meteor.subscribe("clues");
 
   Template.allmppreview.helpers({
     mppreviews: function(){
@@ -18,7 +28,7 @@ if (Meteor.isClient) {
       		if (GoogleMaps.loaded()) {
         		var myLatlng = new google.maps.LatLng(42.340085, -71.089102);
         		var mapOptions = {
-          			zoom: 8,
+          			zoom: 3,
           			center: myLatlng
         		}            
         	}
@@ -35,8 +45,22 @@ if (Meteor.isClient) {
         setMPPreviewList(map);
       });
     });
+    
+    Clues.find().observe({
+      added: function(entry) {
+        var m = markers[entry.mpprofileid];
+        if(m){
+          console.log("marker is:");
+          console.log(m);
+          console.log(entry.mpprofileid);
+          m.setAnimation(google.maps.Animation.BOUNCE);
+          setTimeout(function(){ m.setAnimation(null); }, 730);
+        }
+      }
+    });
   });
 }
+
 
 function setMPPreviewList(map) {
   var m = MPProfiles.find().fetch();
@@ -56,17 +80,28 @@ function setMPPreviewList(map) {
                   position: posn,
                   map: map.instance,
                   icon: img,});
+    markers[m[i]._id] = marker;
     
     if(map.instance.getBounds().contains(posn)){
       mppreview_list[mppreview_list.length] = m[i];
-      //marker.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
   Session.set('mppreview_list', mppreview_list);
 }
 
 
+// Uses masonry backend
+function masonize(callback) {
+  var container = $('#mppreviewbox')
+  container.masonry({
+    itemSelector:'.item',
+    gutter:20
+  })
+  if(callback){
+    callback()
+  };
 
+}
 
 
 

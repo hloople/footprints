@@ -15,9 +15,7 @@ Template.mppreview.helpers({
 	},
 	name: function(){
 		var name =
-		MPProfiles.findOne(this._id).firstname +
-		" " +
-		MPProfiles.findOne(this._id).lastname;
+		MPProfiles.findOne(this._id).firstname + " " + MPProfiles.findOne(this._id).lastname;
 		return name;
 	},
 	missingdays: function(){

@@ -1,13 +1,14 @@
 <template name="mpprofile">
-
+<!--
 	<div>
 		<ul class="nav pull-right">
-			<li><a class="addClueClass" href="#">What do you know about (me)?</a></li>
+			<li><a class="addClueClass" href="#">What do you know about {{firstname}}?</a></li>
 		</ul>
 	</div>
+-->
 
 	<div class="profileside">
-		<img src="{{profilepicture}}"/>
+		<div class="profilepic"> <img src="{{profilepicture}}"/> </div>
 
 		Nickname: {{nickname}} <br>
 		Full Name: {{firstname}} {{lastname}}<br>
@@ -28,6 +29,7 @@
 
 
 	<div class="profilebody">
+		<a class="addClueClass" href="#">What do you know about {{firstname}}?</a>
 		{{> allclues}}
 	</div>
 	
