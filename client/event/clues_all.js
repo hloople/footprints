@@ -26,7 +26,12 @@ Template.addclue.events({
 		var title = tmpl.find('.title').value;
 		var description = tmpl.find('.description').value;
 		var url = tmpl.find('.src').value;
-		Clues.insert({title:title, description:description, src:url, mpprofileid: this._id});
+		var relationtomp = tmpl.find('.relationtomp').value;
+		Clues.insert({title:title, 
+					  description:description, 
+					  src:url, 
+					  mpprofileid: this._id, 
+					  relationtomp:relationtomp});
 		Session.set('adding_clue', false);
 	},
 	'click .cancel':function(evt,tmpl){
@@ -50,4 +55,8 @@ Template.allclues.helpers({
 	clues: function(){
 		return Clues.find({mpprofileid: this._id});
 	}
+})
+
+Template.addclue.helpers({
+	firstname: this.firstname
 })

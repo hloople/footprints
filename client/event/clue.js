@@ -22,6 +22,16 @@ Template.clue.helpers({
 		// find the number of likes for this clue from database
 		return Likes.find({clue:this._id}).count();
 	},
+	relationinfo: function(){
+		if(!this.relationtomp){
+			return "Anonymous";
+		}
+		else
+		{
+			return this.relationtomp;
+		}
+	}
+	/*
 	doeslike: function(){
 		var doeslike = Likes.find({muser:Meteor.userId(), 
 	                            clue:this._id});
@@ -33,4 +43,5 @@ Template.clue.helpers({
 			return false;
 		}
 	}
+	*/
 })
