@@ -10,7 +10,7 @@ Template.clue.events({
 				muser:Meteor.userId(), 
 				clue:tmpl.data._id});
 		};
-		Session.set('updated', new Date());
+		//Session.set('updated', new Date());
 	}
 })
 
@@ -26,7 +26,11 @@ Template.clue.helpers({
 		var doeslike = Likes.find({muser:Meteor.userId(), 
 	                            clue:this._id});
 		if(doeslike){
-			return "I like this"
+			return true;
+		}
+		else
+		{
+			return false;
 		}
 	}
 })

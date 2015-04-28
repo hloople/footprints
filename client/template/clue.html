@@ -18,11 +18,19 @@
 		<p>{{description}}</p> 
 
 		{{#if currentUser}}
+			{{#if likesthis}}
+			<p> hello </p>
 			<a href="#" class="like">
 				<img width="22px" src="\heart.png" class="img-circle" alt="#"/>
 			</a>
+			{{else}}
+			<a href="#" class="like">
+				<img width="22px" src="\heart_unclicked.png" class="img-circle" alt="#"/>
+			</a>
+
+			{{/if}}
 			<span class="label label-info">{{numlikes}}</span>
-			<span class="badge badge-success">{{likesthis}}</span>
+			<!--<span class="badge badge-success">{{likesthis}}</span>-->
 		{{/if}}
 	</div>
 </template>
