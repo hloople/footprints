@@ -11,8 +11,7 @@ Template.mppreview.events({
 
 Template.mppreview.helpers({
 	src: function(){
-		return "profile-pic.jpg";
-		
+		return MPProfiles.findOne(this._id).profilepicture;
 	},
 	name: function(){
 		var name =
@@ -21,10 +20,20 @@ Template.mppreview.helpers({
 		MPProfiles.findOne(this._id).lastname;
 		return name;
 	},
-	timesincemissing: function(){
-		return "123 days";
+	missingdays: function(){
+		var datemissing = MPProfiles.findOne(this._id).datemissing;
+		var dm = moment(datemissing);
+		var nw = moment();
+		var count = nw.diff(dm, 'days');
+		return count;
 	},
 	found: function(){
-		return "No";
+		if(MPProfiles.findOne(this._id).found){
+			return "Yes"
+		}
+		else
+		{
+			return "No"
+		}
 	}
 })

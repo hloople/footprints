@@ -27,8 +27,7 @@ Template.addclue.events({
 		var description = tmpl.find('.description').value;
 		var url = tmpl.find('.src').value;
 		var height = getRandomInt(200,300);
-		// I could optionally add height and width into the database
-		Clues.insert({title:title, description:description, src:url, height:height});
+		Clues.insert({title:title, description:description, src:url, mpprofileid: this._id});
 		Session.set('adding_clue', false);
 	},
 	'click .cancel':function(evt,tmpl){

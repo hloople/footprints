@@ -1,5 +1,5 @@
 <template name="mpprofile">
-	
+
 	<div>
 		<ul class="nav pull-right">
 			<li><a class="addClueClass" href="#">What do you know about (me)?</a></li>
@@ -7,19 +7,21 @@
 	</div>
 
 	<div class="profileside">
-		<img src="/profile-pic.jpg"/>
+		<img src="{{profilepicture}}"/>
 
 		Nickname: {{nickname}} <br>
 		Full Name: {{firstname}} {{lastname}}<br>
 		<br>
 		Missing since: {{datemissing}}<br>
-		Count: {{datemissingcount}}<br>
+		Count: {{datemissingcount}} days<br>
 		<br>
 		Gender: {{gender}}<br>
 		Age Today: {{agetoday}}<br>
 		Eye Color: {{eyecolor}}<br>
 		Height: {{height}}<br>
 		Hair Color: {{haircolor}}<br>
+		Detective Name: {{detectivename}}<br>
+		Detective Phone: {{detectivephone}}<br>
 		<br>
 		{{> minimap}}
 	</div>
