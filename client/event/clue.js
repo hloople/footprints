@@ -30,6 +30,26 @@ Template.clue.helpers({
 		{
 			return this.relationtomp;
 		}
+	},
+	count: function(){
+		var days;
+		if(this.date){
+			var dateposted = this.date;
+			var dm = moment(dateposted);
+			var nw = moment();
+			days = nw.diff(dm, 'days') + 1;
+		}
+		else {
+			days = getRandomInt(0, 590);
+		}
+
+		if (days == 1) {
+			return "1 day"
+		}
+		else {
+			return days + " days"
+		}
+
 	}
 	/*
 	doeslike: function(){
@@ -45,3 +65,8 @@ Template.clue.helpers({
 	}
 	*/
 })
+
+
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}

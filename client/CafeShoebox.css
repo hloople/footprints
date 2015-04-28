@@ -11,6 +11,11 @@
      color: #A1875D;
 }
 
+.relation {
+  font-size: 9px;
+  float: right;
+  color: #1bba9a;
+}
 
 .span4{ 
 	max-width:200px;

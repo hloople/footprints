@@ -27,11 +27,13 @@ Template.addclue.events({
 		var description = tmpl.find('.description').value;
 		var url = tmpl.find('.src').value;
 		var relationtomp = tmpl.find('.relationtomp').value;
+		var date = tmpl.find('.date').value;
 		Clues.insert({title:title, 
 					  description:description, 
 					  src:url, 
 					  mpprofileid: this._id, 
-					  relationtomp:relationtomp});
+					  relationtomp:relationtomp,
+					  date: new Date(date)});
 		Session.set('adding_clue', false);
 	},
 	'click .cancel':function(evt,tmpl){
