@@ -1,6 +1,6 @@
 
 if (Meteor.isClient) {
-  Meteor.subscribe("mpprofiles");
+  //Meteor.subscribe("mpprofiles");
 
   Template.allmppreview.helpers({
     mppreviews: function(){
@@ -34,7 +34,6 @@ if (Meteor.isClient) {
         console.log("bounds changed!");
         setMPPreviewList(map);
       });
-
     });
   });
 }
@@ -45,20 +44,17 @@ function setMPPreviewList(map) {
   Session.set('mppreview_list', []);
 
   for(var i = 0; i < m.length; i++){
-    var shape = {coords: [0,0,10], type: "circle"};
     var img = {
       url: m[i].profilepicture,
       scaledSize: new google.maps.Size(20, 20),
       origin: new google.maps.Point(0,0),
       anchor: new google.maps.Point(10,20),
-      shape: shape
     };
     
     var posn = new google.maps.LatLng(m[i].loclat, m[i].loclng);
     var marker = new google.maps.Marker({
                   position: posn,
                   map: map.instance,
-                  //shape:shape,
                   icon: img,});
     
     if(map.instance.getBounds().contains(posn)){
@@ -67,8 +63,9 @@ function setMPPreviewList(map) {
     }
   }
   Session.set('mppreview_list', mppreview_list);
-
 }
+
+
 
 
 
