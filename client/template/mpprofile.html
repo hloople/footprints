@@ -10,7 +10,13 @@
 	<div class="profileside">
 		<h3> {{firstname}} {{lastname}} </h3>
 		<div class="profilepic"> <img src="{{profilepicture}}"/> </div>
-		<h4> Missing for {{datemissingcount}} days </h4>
+		
+		<div class="datemissingbox">
+			<span class="datemissingbuffer"> Missing for </span>
+			<span class="datemissing">{{datemissingcount}}</span>
+			<span class="datemissingbuffer"> days</span>
+		</div>
+		
 
 		<div class="appealbox">
 			<p>{{appeal}} - {{appealrelation}} </p>

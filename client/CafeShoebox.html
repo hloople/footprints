@@ -7,9 +7,32 @@
 			<a class="brand" href="/">
 				<img src="/footprints_logo_small.png"/>
 			</a>
-			<ul class="nav pull-right"> 
-				{{> loginButtons align="right"}}
+
+			<div id="search" >
+				<form action="javascript:void(0);" method="GET">
+					<fieldset class="clearfix">
+						<input type="search" name="search" value="Find Person by City, State, Name, Object" onBlur="if(this.value=='')this.value='Find Person City, State, Name, Object'" onFocus="if(this.value=='Find Person City, State, Name, Object')this.value='' "> <!-- JS because of IE support; better: placeholder="What are you looking for?" -->
+						<input type="submit" value="Search" class="button">
+					</fieldset>
+				</form>
+			</div> <!-- end search -->
+
+			<ul class="nav pull-right"> 	
+				<div class="login">
+					{{> loginButtons align="right"}}
+				</div>
 			</ul>
 		</div>
 	</div>
 </body>
+
+
+
+
+
+
+
+
+
+
+
